@@ -39,8 +39,6 @@ var typed = new Typed('#text', {
 });
 
 
-
-
 // Get the audio element
 const audio = document.getElementById('audio');
 
@@ -55,9 +53,15 @@ function playAudio() {
     });
 }
 
-// Play audio on user interaction
-document.addEventListener('click', () => {
-    playAudio();
-}); 
+// Play audio automatically on page load
+window.addEventListener('load', () => {
+    audio.muted = true; // Start muted to comply with autoplay policy
+    audio.play().catch(error => {
+        console.error('Error playing audio on load:', error);
+    });
 
-
+    // Optionally, unmute after a short delay
+    setTimeout(() => {
+        audio.muted = false; // Unmute after a delay
+    }, 1000); // Adjust the delay as needed
+});
