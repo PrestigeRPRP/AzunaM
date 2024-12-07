@@ -40,14 +40,12 @@ var typed = new Typed('#text', {
 
 
 
+
 // Get the audio element
 const audio = document.getElementById('audio');
 
 // Set the volume to 0.2
 audio.volume = 0.2;
-
-// Variable to track if audio has been played
-let audioPlayed = false;
 
 // Function to play audio
 function playAudio() {
@@ -59,23 +57,7 @@ function playAudio() {
 
 // Play audio on user interaction
 document.addEventListener('click', () => {
-    if (!audioPlayed) {
-        playAudio();
-        audioPlayed = true; // Mark that audio has been played
-    }
-});
+    playAudio();
+}); 
 
-// Set a timer to play audio automatically if not clicked within 1 second
-setTimeout(() => {
-    if (!audioPlayed) {
-        audio.muted = true; // Start muted to comply with autoplay policy
-        audio.play().catch(error => {
-            console.error('Error playing audio automatically:', error);
-        });
 
-        // Optionally, unmute after a short delay
-        setTimeout(() => {
-            audio.muted = false; // Unmute after a delay
-        }, 1000); // Adjust the delay as needed
-    }
-}, 1000); // 1000 milliseconds = 1 second
