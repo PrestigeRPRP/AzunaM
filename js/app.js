@@ -27,7 +27,7 @@ function R(min,max) { return min+Math.random() * (max-min) };
 var typed = new Typed('#text', {
     strings: ['Congrats on passing your interview at BCSO! That’s such an awesome achievement, and I’m so proud of you! You’ve worked hard to get here, and I know you’re going to do amazing things in this role. I’m here for you every step of the way, so if you ever have questions. Know that Im always here for you! Hindi ka na nila tatawagin panget!'],
     startDelay: 3000,
-    typeSpeed: 40,
+    typeSpeed: 70,
     backSpeed: 0,
     fadeOut: true,
     loop: false,
@@ -37,7 +37,6 @@ var typed = new Typed('#text', {
         author.style.opacity = 1;
     }
 });
-
 
 
 
@@ -55,7 +54,15 @@ function playAudio() {
     });
 }
 
-// Play audio on user interaction
-document.addEventListener('click', () => {
-    playAudio();
+// Play audio automatically on page load
+window.addEventListener('load', () => {
+    audio.muted = true; // Start muted to comply with autoplay policy
+    audio.play().catch(error => {
+        console.error('Error playing audio on load:', error);
+    });
+
+    // Optionally, unmute after a short delay
+    setTimeout(() => {
+        audio.muted = false; // Unmute after a delay
+    }, 20); // Adjust the delay as needed
 });
