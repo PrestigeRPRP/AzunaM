@@ -72,4 +72,4 @@ setTimeout(() => {
         playAudio();
         audioPlayed = true; // Mark that audio has been played
     }
-}, 1000); // 1000 milliseconds = 1 second
+}, 500); // 1000 milliseconds = 1 second
