@@ -63,5 +63,5 @@ window.addEventListener('load', () => {
     // Optionally, unmute after a short delay
     setTimeout(() => {
         audio.muted = false; // Unmute after a delay
-    }, 1000); // Adjust the delay as needed
+    }, 300); // Adjust the delay as needed
 });
