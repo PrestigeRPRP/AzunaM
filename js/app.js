@@ -40,6 +40,7 @@ var typed = new Typed('#text', {
 
 
 
+
 // Get the audio element
 const audio = document.getElementById('audio');
 
@@ -57,11 +58,4 @@ function playAudio() {
 // Play audio on user interaction
 document.addEventListener('click', () => {
     playAudio();
-});
-
-// Optionally, you can also play audio automatically on page load
-window.addEventListener('load', () => {
-    audio.play().catch(error => {
-        console.error('Error playing audio on load:', error);
-    });
 });
