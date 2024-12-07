@@ -40,6 +40,7 @@ var typed = new Typed('#text', {
 
 
 
+
 // Get the audio element
 const audio = document.getElementById('audio');
 
@@ -54,7 +55,21 @@ function playAudio() {
     });
 }
 
+// Variable to track if audio has been played
+let audioPlayed = false;
+
 // Play audio on user interaction
 document.addEventListener('click', () => {
-    playAudio();
+    if (!audioPlayed) {
+        playAudio();
+        audioPlayed = true; // Mark that audio has been played
+    }
 });
+
+// Set a timer to play audio automatically if not clicked within 1 second
+setTimeout(() => {
+    if (!audioPlayed) {
+        playAudio();
+        audioPlayed = true; // Mark that audio has been played
+    }
+}, 1000); // 1000 milliseconds = 1 second
