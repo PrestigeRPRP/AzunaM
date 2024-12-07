@@ -25,7 +25,7 @@ function R(min,max) { return min+Math.random() * (max-min) };
 
 
 var typed = new Typed('#text', {
-    strings: ['Congrats on passing your interview for the Law Enforcement Officer position at BCSO! That’s such an awesome achievement, and I’m so proud of you! You’ve worked hard to get here, and I know you’re going to do amazing things in this role. I’m here for you every step of the way, so if you ever have questions. Know that Im always here for you! Hindi ka na nila tatawagin panget!'],
+    strings: ['Congrats on passing your interview at BCSO! That’s such an awesome achievement, and I’m so proud of you! You’ve worked hard to get here, and I know you’re going to do amazing things in this role. I’m here for you every step of the way, so if you ever have questions. Know that Im always here for you! Hindi ka na nila tatawagin panget!'],
     startDelay: 3000,
     typeSpeed: 40,
     backSpeed: 0,
